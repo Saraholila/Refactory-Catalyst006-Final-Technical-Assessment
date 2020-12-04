@@ -1,0 +1,70 @@
+extends layout  
+block content
+    header.card-header
+        img(src='../system-images/form-header-image' alt='' style='width:100px; height:100px;')
+        img(src='../system-images/uganda-coat_of_arms.png' alt='' style='width:100px; height:100px;')
+        img(src='../system-images/uganda-flag-part.png' alt='' style='width:100px; height:100px;')
+        h4.card-title Ministry of Health COVID-19 (CORONA VIRUS) Virus-Test Registration Form 
+        
+
+    form( method="POST" action='/regform' name ="regform" onsubmit='return regform()')
+        div.form-row
+            div.col.form-group
+                label Surname                
+                input.form-control(name="surname")
+                span#surnameerror(style= "width:20px")
+            div.col.form-group
+                label Given name
+                span.required
+                input.form-control(name="givenname")                   
+                span#givennameerror
+        div.form-row            
+            div.col.form-group
+                label Date of birth
+                br                
+                label.form-check.form-check-inline
+                input.form-check-input(type="date" name="birthdate" )
+                span#birthdateerror(style= "width:20px")
+            div.col.form-group
+                label Place of Residence
+                span.required
+                input.form-control(name="residence")
+                span#placofresidenceeerror 
+        div.form-row
+            div.col.form-group
+                label Occupation
+                br
+                span.required
+                input.form-check-input(name="occupation")
+                span#occupationerror
+            div.col.form-group
+                label Nationality
+                span.required
+                input.form-control(name="nationality")                    
+                span#nationalityerror              
+        div.form-row
+            div.col.form-group
+                label Gender
+                span.required
+                select.form-control(name="gender")
+                    option(value="Female" id="genderF") Female
+                    option(value="Male" id="genderM") Male
+                span#gendererror
+        div.form-row                              
+            div.col.form-group
+                label Category
+                span.required
+                select.form-control(name="category" placeholder="--Select Category--")
+                    option(value="Returnee") Returnee
+                    option(value="Contanct") Contact
+                    option(value="Alert") Alert
+                    option(value="Volunteer") Volunteer
+                span#categoryerror                                                  
+                   
+        div.form-row
+            div.col.form-group
+                button.btn.btn-success.btn-block Register
+            
+    
+            
+                
